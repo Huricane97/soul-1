@@ -148,7 +148,7 @@ const LandingPage: React.FC = () => {
               As a community member, you are an integral part of the entire game economy.
             </p>
             <div className="mt-6 flex justify-left gap-4">
-              <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[20%]">
+              <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[20%] max-md:w-full">
                 Join Discord
               </button>
             </div>
@@ -183,7 +183,7 @@ const LandingPage: React.FC = () => {
               Don’t miss out on exclusive NFT avatars and exciting rewards!
             </p>
             <div className="mt-6 flex justify-left gap-4">
-              <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[30%]">
+              <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[30%] max-md:w-full">
                 EOAS Game
               </button>
             </div>
