@@ -1,0 +1,8 @@
+# Ignore the build.ip file
+build.zip
+
+# Ignore the build folder
+build/
+
+# Ignore the node_modules folder
+node_modules/
