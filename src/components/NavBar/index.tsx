@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { useNavigate } from 'react-router-dom'
-import { FaBars, FaRegTimesCircle } from 'react-icons/fa'
+// import { FaBars, FaRegTimesCircle } from 'react-icons/fa'
 
 interface NavBarWrapperProps {
   active: boolean
@@ -143,20 +143,20 @@ const Logo = styled.a`
 `
 
 export const NavBar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen] = useState(false)
   const [active, setActive] = useState(true)
   const [lastScroll, setLastScroll] = useState(0)
   const navigate = useNavigate()
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  useEffect(() => {
-    // Check login status on component mount
-    setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-  }, []);
+  // useEffect(() => {
+  //   // Check login status on component mount
+  //   setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
+  // }, []);
 
-  const handleToggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
+  // const handleToggleMobileMenu = () => {
+  //   setMobileMenuOpen(!mobileMenuOpen)
+  // }
 
   const handleScroll = () => {
     if (window.scrollY <= lastScroll) setActive(true)
@@ -173,16 +173,16 @@ export const NavBar = () => {
     }
   }, [])
 
-  const handleloginButton = async () => {
-    navigate('/UserAuth')
-  }
+  // const handleloginButton = async () => {
+  //   navigate('/UserAuth')
+  // }
 
-  const handleLogoutButton = () => {
-    localStorage.clear();
-    setIsLoggedIn(false);
-    alert('Logout successful');
-    navigate('/');
-  };
+  // const handleLogoutButton = () => {
+  //   localStorage.clear();
+  //   setIsLoggedIn(false);
+  //   alert('Logout successful');
+  //   navigate('/');
+  // };
 
   const handlebuttonClick1 = () => {
     navigate('/')
@@ -205,7 +205,7 @@ export const NavBar = () => {
             <ReactTooltip anchorId='mintMenu' place='bottom' variant='info' content='Coming soon' />
           </div>
 
-          <div className='flex w-full items-center justify-center gap-2 buttons relative'>
+          {/* <div className='flex w-full items-center justify-center gap-2 buttons relative'>
             <div className='flex w-full justify-end items-center menu'>
               <a className='flex flex-col items-center gap-1' id='mintMenuX' href='/#'>
                 <img className='w-[10px] h-[30px]' src='/assets/imgs/header/image 1.png' />
@@ -251,16 +251,7 @@ export const NavBar = () => {
               </button>
             )}
 
-            {/* <a href='https://x.com/ElementsofaSoul' target='_blank' rel='noopener noreferrer'>
-              <span></span>
-              <img alt='img' src={'/assets/icons/Vector.svg'}></img>
-            </a>
-
-            <a href='https://Discord.gg/eoas' target='_blank' rel='noopener noreferrer'>
-              <span></span>
-              <img alt='img' src={'/assets/icons/Vector(1).svg'}></img>
-            </a> */}
-          </div>
+          </div> */}
         </div>
 
         <div className='flex justify-between items-center px-2 py-2 min-[768px]:hidden'>
@@ -268,13 +259,13 @@ export const NavBar = () => {
             <img alt='pic' src='/assets/imgs/logo.webp' />
           </Logo>
 
-          <div
+          {/* <div
             className={`${mobileMenuOpen && 'z-[999]'} cursor-pointer text-white p-1`}
             onClick={handleToggleMobileMenu}
           >
             {mobileMenuOpen ? <FaRegTimesCircle /> : <FaBars />}
-          </div>
-          {mobileMenuOpen && (
+          </div> */}
+          {/* {mobileMenuOpen && (
             <div className='mobile-sidebar'>
               <a className='mblmenuitem' id='mintMenuX' href='/#'>
                 Home
@@ -321,10 +312,10 @@ export const NavBar = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
-    </NavBarWrapper>
+    </NavBarWrapper >
   )
 }
 
