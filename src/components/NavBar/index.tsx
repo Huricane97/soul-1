@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 import { useNavigate } from 'react-router-dom'
-// import { FaBars, FaRegTimesCircle } from 'react-icons/fa'
+import { FaBars, FaRegTimesCircle } from 'react-icons/fa'
 
 interface NavBarWrapperProps {
   active: boolean
@@ -143,20 +143,20 @@ const Logo = styled.a`
 `
 
 export const NavBar = () => {
-  const [mobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [active, setActive] = useState(true)
   const [lastScroll, setLastScroll] = useState(0)
   const navigate = useNavigate()
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // useEffect(() => {
-  //   // Check login status on component mount
-  //   setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
-  // }, []);
+  useEffect(() => {
+    // Check login status on component mount
+    setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
+  }, []);
 
-  // const handleToggleMobileMenu = () => {
-  //   setMobileMenuOpen(!mobileMenuOpen)
-  // }
+  const handleToggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
 
   const handleScroll = () => {
     if (window.scrollY <= lastScroll) setActive(true)
@@ -173,16 +173,16 @@ export const NavBar = () => {
     }
   }, [])
 
-  // const handleloginButton = async () => {
-  //   navigate('/UserAuth')
-  // }
+  const handleloginButton = async () => {
+    navigate('/UserAuth')
+  }
 
-  // const handleLogoutButton = () => {
-  //   localStorage.clear();
-  //   setIsLoggedIn(false);
-  //   alert('Logout successful');
-  //   navigate('/');
-  // };
+  const handleLogoutButton = () => {
+    localStorage.clear();
+    setIsLoggedIn(false);
+    alert('Logout successful');
+    navigate('/');
+  };
 
   const handlebuttonClick1 = () => {
     navigate('/')
@@ -195,7 +195,7 @@ export const NavBar = () => {
     >
       <div className='container m-auto'>
         <div className='flex justify-between items-center px-2 py-2 max-md:hidden'>
-          <div className='flex items-center justify-center gap-2'>
+          <div className='flex items-center justify-left w-full gap-2'>
             <Logo className='cursor-pointer' onClick={handlebuttonClick1}>
               <img alt='pic' src='/assets/imgs/header/1.webp' />
             </Logo>
@@ -205,8 +205,8 @@ export const NavBar = () => {
             <ReactTooltip anchorId='mintMenu' place='bottom' variant='info' content='Coming soon' />
           </div>
 
-          {/* <div className='flex w-full items-center justify-center gap-2 buttons relative'>
-            <div className='flex w-full justify-end items-center menu'>
+          <div className='flex w-full items-center justify-end gap-2 buttons relative'>
+            {/* <div className='flex w-full justify-end items-center menu'>
               <a className='flex flex-col items-center gap-1' id='mintMenuX' href='/#'>
                 <img className='w-[10px] h-[30px]' src='/assets/imgs/header/image 1.png' />
 
@@ -239,19 +239,19 @@ export const NavBar = () => {
                 <img className='w-[10px] h-[30px]' src='/assets/imgs/header/image-6.png' />
 
               </a>
-            </div>
+            </div> */}
 
             {isLoggedIn ? (
               <button className="walletBtn ml-4" onClick={handleLogoutButton}>
                 LOGOUT
               </button>
             ) : (
-              <button className="walletBtn ml-4" onClick={handleloginButton}>
+              <button className="walletBtn ml-4 w-full" onClick={handleloginButton}>
                 LOGIN
               </button>
             )}
 
-          </div> */}
+          </div>
         </div>
 
         <div className='flex justify-between items-center px-2 py-2 min-[768px]:hidden'>
@@ -259,15 +259,15 @@ export const NavBar = () => {
             <img alt='pic' src='/assets/imgs/logo.webp' />
           </Logo>
 
-          {/* <div
+          <div
             className={`${mobileMenuOpen && 'z-[999]'} cursor-pointer text-white p-1`}
             onClick={handleToggleMobileMenu}
           >
             {mobileMenuOpen ? <FaRegTimesCircle /> : <FaBars />}
-          </div> */}
-          {/* {mobileMenuOpen && (
+          </div>
+          {mobileMenuOpen && (
             <div className='mobile-sidebar'>
-              <a className='mblmenuitem' id='mintMenuX' href='/#'>
+              {/* <a className='mblmenuitem' id='mintMenuX' href='/#'>
                 Home
               </a>
               <a className='mblmenuitem' id='' href='/Guild'>
@@ -287,7 +287,7 @@ export const NavBar = () => {
               </a>
               <a className='mblmenuitem' id='' href='/NFTs'>
                 NFTs
-              </a>
+              </a> */}
 
               <div className='flex flex-col gap-4 buttons relative'>
                 {isLoggedIn ? (
@@ -312,7 +312,7 @@ export const NavBar = () => {
                 </div>
               </div>
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </NavBarWrapper >

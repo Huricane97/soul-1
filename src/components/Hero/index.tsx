@@ -110,8 +110,8 @@ const LandingPage: React.FC = () => {
           </div>
 
           <div className="mt-6 flex justify-center gap-4">
-            <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn">Join Discord</button>
-            <button className="sidebutton">Giveaways</button>
+            <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn"><a href="https://Discord.gg/eoas" target='_blank'>Join Discord</a></button>
+            <button className="sidebutton"><a href="/UserAuth">Giveaways</a></button>
           </div>
 
         </div>
@@ -149,7 +149,9 @@ const LandingPage: React.FC = () => {
             </p>
             <div className="mt-6 flex justify-left gap-4">
               <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[20%] max-md:w-full">
-                Join Discord
+                <a href="https://Discord.gg/eoas" target='_blank'>
+                  Join Discord
+                </a>
               </button>
             </div>
           </div>
@@ -184,7 +186,9 @@ const LandingPage: React.FC = () => {
             </p>
             <div className="mt-6 flex justify-left gap-4">
               <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn w-[30%] max-md:w-full">
-                EOAS Game
+                <a href="/UserAuth">
+                  EOAS Game
+                </a>
               </button>
             </div>
           </div>
@@ -256,7 +260,11 @@ const LandingPage: React.FC = () => {
             <img className="rounded-[10px] w-[200px] max-md:w-[100px]" src="/assets/imgs/6.4.png" alt="NFT" />
           </div>
           <div className="mt-6 flex justify-center gap-4">
-            <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn">Free NFT Mint</button>
+            <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn">
+              <a href="/UserAuth">
+                Free NFT Mint
+              </a>
+            </button>
           </div>
         </div>
       </section>
@@ -288,7 +296,9 @@ const LandingPage: React.FC = () => {
 
           <div className="mt-6 flex justify-center gap-4">
             <button className="bg-purple-600 px-6 py-2 rounded-lg text-white mintBtn">
-              Join Discord
+              <a href="https://Discord.gg/eoas" target='_blank'>
+                Join Discord
+              </a>
             </button>
           </div>
         </div>
