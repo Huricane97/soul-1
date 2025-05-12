@@ -51,14 +51,14 @@ export const Footer = () => {
             <div className=' col-lg-10 flex flex-row max-[768px]:justify-center items-center justify-center gap-5 w-[100%]'>
               <p className='text-white text-xs'>@2025 Elementsofsoul. All rights reserved</p>
               <a
-                target='_blank'
+                href='/tos'
                 rel='noreferrer noopener'
                 className='text-white footer-links'
               >
                 | Terms & Conditions
               </a>
               <a
-                target='_blank'
+                href='/privacypolicy'
                 rel='noreferrer noopener'
                 className='text-white footer-links'
               >

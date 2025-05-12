@@ -15,6 +15,8 @@ import GetReward from '@pages/GetReward'
 import NFTs from '@pages/NFTs'
 import UserAuth from '@pages/UserAuth'
 import "./app.css";
+import PrivacyPolicy from '@pages/Legal/Privacy'
+import TermsOfService from '@pages/Legal/TOS'
 Modal.setAppElement('#root')
 function App() {
   return (
@@ -31,8 +33,10 @@ function App() {
 
         <Route path='/NFTs' element={<NFTs />} />
 
-        
+
         <Route path='/leaderboards' element={<LeaderBoards />} />
+        <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+        <Route path='/tos' element={<TermsOfService />} />
         <Route path='*' element={<Navigate to='/' />} />
       </Routes>
       <ToastContainer theme='dark' />
